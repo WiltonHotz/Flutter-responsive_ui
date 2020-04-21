@@ -1,15 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:responsivearchitecture/datamodels/drawer_item_data.dart';
+import 'package:responsivearchitecture/widgets/base_model_widget.dart';
 
-class DrawerOptionTabletPortrait extends StatelessWidget {
-  final String title;
-  final IconData iconData;
-  const DrawerOptionTabletPortrait({
-    Key key,
-    this.title,
-    this.iconData,
-  }) : super(key: key);
+class DrawerOptionTabletPortrait extends BaseModelWidget<DrawerItemData> {
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, DrawerItemData data) {
     return Container(
       width: 152.0,
       alignment: Alignment.center,
@@ -17,30 +12,25 @@ class DrawerOptionTabletPortrait extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[
           Icon(
-            iconData,
+            data.iconData,
             size: 45,
           ),
-          Text(title,
-          style: TextStyle(
-          fontSize: 20.0,
-          ),
+          Text(
+            data.title,
+            style: TextStyle(
+              fontSize: 20.0,
+            ),
           ),
         ],
       ),
     );
   }
 }
-
-class DrawerOptionTabletLandscape extends StatelessWidget {
-  final String title;
-  final IconData iconData;
-  const DrawerOptionTabletLandscape({
-    Key key,
-    this.title,
-    this.iconData,
-  }) : super(key: key);
-  @override
-  Widget build(BuildContext context) {
-    return Container();
-  }
-}
+//
+//class DrawerOptionTabletLandscape extends BaseModelWidget<DrawerItemData> {
+//
+//  @override
+//  Widget build(BuildContext context, DrawerItemData data) {
+//    return Container();
+//  }
+//}

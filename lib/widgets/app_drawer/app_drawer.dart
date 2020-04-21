@@ -3,7 +3,6 @@ import 'package:responsivearchitecture/ui/responsive/orientation_layout.dart';
 import 'package:responsivearchitecture/ui/responsive/screen_type_layout.dart';
 import 'package:responsivearchitecture/widgets/app_drawer/app_drawer_mobile.dart';
 import 'package:responsivearchitecture/widgets/drawer_option/drawer_option.dart';
-
 import 'app_drawer_tablet.dart';
 
 class AppDrawer extends StatelessWidget {
@@ -12,8 +11,8 @@ class AppDrawer extends StatelessWidget {
     return ScreenTypeLayout(
       mobile: AppDrawerMobile(),
       tablet: OrientationLayout(
-        portrait: AppDrawerTabletPortrait(),
-        landscape: AppDrawerTabletLandscape(),
+        portrait: (context) => AppDrawerTabletPortrait(),
+        landscape: (context) => AppDrawerTabletLandscape(),
       ),
     );
   }

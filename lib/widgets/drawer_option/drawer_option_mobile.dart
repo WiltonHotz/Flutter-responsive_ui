@@ -1,31 +1,29 @@
 import 'package:flutter/material.dart';
+import 'package:responsivearchitecture/datamodels/drawer_item_data.dart';
+import 'package:responsivearchitecture/widgets/base_model_widget.dart';
 
-class DrawerOptionMobilePortrait extends StatelessWidget {
-  final String title;
-  final IconData iconData;
-  const DrawerOptionMobilePortrait({
-    Key key,
-    this.title,
-    this.iconData,
-  }) : super(key: key);
+class DrawerOptionMobilePortrait extends BaseModelWidget<DrawerItemData> {
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, DrawerItemData data) {
     return Container(
-      padding: EdgeInsets.only(left: 25.0,),
+      padding: EdgeInsets.only(
+        left: 25.0,
+      ),
       height: 80.0,
       child: Row(
         children: <Widget>[
           Icon(
-            iconData,
+            data.iconData,
             size: 25.0,
           ),
           SizedBox(
             width: 25.0,
           ),
-          Text(title,
-          style: TextStyle(
-          fontSize: 21.0,
-          ),
+          Text(
+            data.title,
+            style: TextStyle(
+              fontSize: 21.0,
+            ),
           ),
         ],
       ),
@@ -33,18 +31,13 @@ class DrawerOptionMobilePortrait extends StatelessWidget {
   }
 }
 
-class DrawerOptionMobileLandscape extends StatelessWidget {
-  final IconData iconData;
-  const DrawerOptionMobileLandscape({
-    Key key,
-    this.iconData,
-  }) : super(key: key);
+class DrawerOptionMobileLandscape extends BaseModelWidget<DrawerItemData> {
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, DrawerItemData data) {
     return Container(
       height: 70.0,
       alignment: Alignment.center,
-      child: Icon(iconData)
+      child: Icon(data.iconData),
     );
   }
 }
