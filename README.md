@@ -10,3 +10,6 @@ From FilledStacks tutorial on youtube
 
 ![Image of devices](https://github.com/WiltonHotz/Flutter-responsive_ui/blob/master/responsive_ui_drawer.gif)
 
+### Part 3: (Branch "part3") Persisting state
+
+![Image of state](https://github.com/WiltonHotz/Flutter-responsive_ui/blob/part3/persisting_state.gif)
